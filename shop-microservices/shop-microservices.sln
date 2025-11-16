@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{B20CB18A-A178-4874-8EE3-57E1BD056927}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks", "BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj", "{D91A72F9-22C1-4FC5-8530-0FBD6D1CC9B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +16,9 @@ Global
 		{B20CB18A-A178-4874-8EE3-57E1BD056927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20CB18A-A178-4874-8EE3-57E1BD056927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20CB18A-A178-4874-8EE3-57E1BD056927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91A72F9-22C1-4FC5-8530-0FBD6D1CC9B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91A72F9-22C1-4FC5-8530-0FBD6D1CC9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91A72F9-22C1-4FC5-8530-0FBD6D1CC9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91A72F9-22C1-4FC5-8530-0FBD6D1CC9B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
