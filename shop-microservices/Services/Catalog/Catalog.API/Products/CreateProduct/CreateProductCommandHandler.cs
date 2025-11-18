@@ -24,7 +24,6 @@ public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand,
 {
     private readonly IDocumentSession _session;
     private readonly ILogger<CreateProductCommandHandler> _logger;
-    private readonly IValidator<CreateProductCommand> _validator;
     
     public CreateProductCommandHandler(IDocumentSession session, 
         ILogger<CreateProductCommandHandler> logger, 
@@ -32,19 +31,11 @@ public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand,
     {
         _session = session;
         _logger = logger;
-        _validator = validator;
     }
     
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
         _logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}", command);
-        
-        var result = await _validator.ValidateAsync(command, cancellationToken);
-        var errors = result.Errors.Select(x => x.ErrorMessage).ToList();
-        if (errors.Any())
-        {
-            throw new ValidationException(errors.First());
-        }
         
         var product = new Product
         {
