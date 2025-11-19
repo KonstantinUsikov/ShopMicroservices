@@ -10,9 +10,9 @@ public class GetProductByIdEndpoint : ICarterModule
     {
         app.MapGet("/products/{id}", async (Guid id, ISender sender) =>
             {
-                var command = new GetProductByIdQuery(id);
+                var query = new GetProductByIdQuery(id);
 
-                var result = await sender.Send(command);
+                var result = await sender.Send(query);
 
                 var response = result.Adapt<GetProductByIdResponse>();
 
