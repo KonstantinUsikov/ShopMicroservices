@@ -8,12 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
     </ItemGroup>
 
@@ -21,6 +15,12 @@
       <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
       <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
       <PackageReference Include="Marten" Version="8.15.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
