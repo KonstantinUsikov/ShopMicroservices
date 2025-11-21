@@ -1,4 +1,4 @@
-namespace Basket.API.Basket.Exceptions;
+namespace Basket.API.Exceptions;
 
 public class ShoppingCartNotFoundException : NotFoundException
 {

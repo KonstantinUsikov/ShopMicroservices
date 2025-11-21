@@ -6,10 +6,16 @@ public record GetBasketResult(ShoppingCart ShoppingCart);
 
 public class GetBasketQueryHandler : IQueryHandler<GetBasketQuery, GetBasketResult>
 {
+    private readonly IBasketRepository _basketRepository;
+
+    public GetBasketQueryHandler(IBasketRepository basketRepository)
+    {
+        _basketRepository = basketRepository;
+    }
+
     public async Task<GetBasketResult> Handle(GetBasketQuery query, CancellationToken cancellationToken)
     {
-        // TODO: implement repository pattern and use it
-        
-        return new GetBasketResult(new ShoppingCart("user"));
+        var basket = await _basketRepository.GetBasket(query.Username, cancellationToken);
+        return new GetBasketResult(basket);
     }
 }
