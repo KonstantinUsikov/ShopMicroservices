@@ -1,15 +1,15 @@
 namespace Basket.API.Data;
 
-public class BasketRepository : IBasketRepository
+public class ShoppingCartRepository : IShoppingCartRepository
 {
     private readonly IDocumentSession _session;
 
-    public BasketRepository(IDocumentSession session)
+    public ShoppingCartRepository(IDocumentSession session)
     {
         _session = session;
     }
 
-    public async Task<ShoppingCart> GetBasket(string username, CancellationToken cancellationToken = default)
+    public async Task<ShoppingCart> GetShoppingCart(string username, CancellationToken cancellationToken = default)
     {
         var shoppingCart = await _session.LoadAsync<ShoppingCart>(username, cancellationToken);
 
@@ -21,14 +21,14 @@ public class BasketRepository : IBasketRepository
         return shoppingCart;
     }
 
-    public async Task<ShoppingCart> StoreBasket(ShoppingCart shoppingCart, CancellationToken cancellationToken = default)
+    public async Task<ShoppingCart> StoreShoppingCart(ShoppingCart shoppingCart, CancellationToken cancellationToken = default)
     {
         _session.Store(shoppingCart);
         await _session.SaveChangesAsync(cancellationToken);
         return shoppingCart;
     }
 
-    public async Task<bool> DeleteBasket(string username, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteShoppingCart(string username, CancellationToken cancellationToken = default)
     {
         _session.Delete<ShoppingCart>(username);
         await _session.SaveChangesAsync(cancellationToken);
