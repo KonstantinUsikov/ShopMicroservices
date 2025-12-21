@@ -1,6 +1,6 @@
-namespace BuildingBlocks.Messaging.Events;
+namespace Basket.API.Dtos;
 
-public record BasketCheckoutEvent : IntegrationEvent
+public class ShoppingCartCheckoutDto
 {
     public string UserName { get; set; } = string.Empty;
     public Guid CustomerId { get; set; } = Guid.Empty;
