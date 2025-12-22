@@ -14,7 +14,7 @@ public class CheckoutShoppingCartEndpoint : ICarterModule
         
                 var result = await sender.Send(command);
         
-                var response = result.Adapt<CheckoutShoppingCartCommand>();
+                var response = result.Adapt<CheckoutShoppingCartResponse>();
         
                 return Results.Ok(response);
             })
