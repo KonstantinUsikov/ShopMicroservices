@@ -156,6 +156,30 @@
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+        
+  yarpapigateway:
+    image: yarpapigateway
+    build:
+      context: .
+      dockerfile: ApiGateways/YarpApiGateway/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_Kestrel__Endpoints__Http__Url=http://0.0.0.0:8080
+      - ASPNETCORE_Kestrel__Endpoints__Https__Url=https://0.0.0.0:8081
+      - ASPNETCORE_Kestrel__Endpoints__Https__Certificate__Path=/home/app/.aspnet/https/cert.pfx
+      - ASPNETCORE_Kestrel__Endpoints__Https__Certificate__Password=mypassword
+    depends_on:
+      - catalog.api
+      - basket.api
+      - ordering.api
+    ports:
+      - "6004:8080"
+      - "6064:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
     
 volumes:
   postgres_catalog:
