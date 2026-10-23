@@ -1,7 +1,5 @@
 # ShopMicroservices
 
-Backend интернет-магазина на микросервисной архитектуре: .NET, Docker, gRPC, RabbitMQ, YARP.
-
 ![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker_Compose-2496ED?logo=docker&logoColor=white)
@@ -12,6 +10,8 @@ Backend интернет-магазина на микросервисной ар
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?logo=rabbitmq&logoColor=white)
 ![gRPC](https://img.shields.io/badge/gRPC-244c5a?logo=grpc&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+Backend интернет-магазина на микросервисной архитектуре: .NET, Docker, gRPC, RabbitMQ, YARP.
 
 ## Содержание
 
